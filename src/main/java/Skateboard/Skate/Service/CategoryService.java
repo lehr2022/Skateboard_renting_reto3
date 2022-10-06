@@ -29,7 +29,7 @@ public class CategoryService {
             return categoryRepository.save(category);
         } else {
             Optional<Category> category1 = categoryRepository.getCategory(category.getId());
-            if (category1.equals("")) {
+            if (category1.isPresent()) {
                 return categoryRepository.save(category);
             } else {
                 return category;

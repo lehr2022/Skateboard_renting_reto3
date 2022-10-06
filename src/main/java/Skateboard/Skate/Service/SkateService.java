@@ -33,7 +33,7 @@ public class SkateService {
            return skateRepository.save(skate); 
         }else{
             Optional<Skateboard> opt = skateRepository.getSkateboard(skate.getId());
-            if(opt.equals("")){
+            if(opt.isPresent()){
                 return skateRepository.save(skate);
             }else{
                 return skate;

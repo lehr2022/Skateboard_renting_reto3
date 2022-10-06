@@ -29,7 +29,7 @@ public class MessageService {
             return messageRepository.save(message);
         } else {
             Optional<Message> message1 = messageRepository.getMessage(message.getIdMessage());
-            if (message1.equals("")) {
+            if (message1.isPresent()) {
                 return messageRepository.save(message);
             } else {
                 return message;
