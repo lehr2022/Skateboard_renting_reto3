@@ -23,6 +23,11 @@ public class Category implements Serializable{
     private String name;
     private String description;
 
+    
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
+    @JsonIgnoreProperties("category")
+    private List<Skateboard> skate;
+
     public Integer getId() {
         return id;
     }
@@ -33,6 +38,10 @@ public class Category implements Serializable{
 
     public String getDescription() {
         return description;
+    }
+
+    public List<Skateboard> getSkate() {
+        return skate;
     }
 
     public void setId(Integer id) {
@@ -46,11 +55,11 @@ public class Category implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setSkate(List<Skateboard> skate) {
+        this.skate = skate;
+    }
     
     
-    
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
-    private List<Skateboard> skate;
     
 }

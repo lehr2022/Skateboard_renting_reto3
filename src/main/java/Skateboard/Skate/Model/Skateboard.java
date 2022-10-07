@@ -22,47 +22,17 @@ public class Skateboard implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
     private String brand;
-    private Integer years;
+    private Integer yeard;
+    private String name;
     private String description;
 
-    public Integer getYears() {
-        return years;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setYears(Integer years) {
-        this.years = years;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
     
+    @ManyToOne
+    @JoinColumn(name ="category")
+    @JsonIgnoreProperties("skate")
     
-
-    public Integer getYear() {
-        return years;
-    }
-
-    public void setYear(Integer year) {
-        this.years = year;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-    
-    
-    
+    private Category category;
 
     public Integer getId() {
         return id;
@@ -72,10 +42,20 @@ public class Skateboard implements Serializable{
         return brand;
     }
 
- 
+    public Integer getYear() {
+        return yeard;
+    }
 
     public String getName() {
         return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public void setId(Integer id) {
@@ -86,19 +66,21 @@ public class Skateboard implements Serializable{
         this.brand = brand;
     }
 
-   
+    public void setYear(Integer yeard) {
+        this.yeard = yeard;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
- 
-    
-    @ManyToOne
-    @JoinColumn(name ="category")
-    @JsonIgnoreProperties("skate")
-    
-    private Category category;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
     
             
 

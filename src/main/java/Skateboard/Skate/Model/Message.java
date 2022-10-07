@@ -56,6 +56,14 @@ public class Message {
         this.client = client;
     }
 
+    public Skateboard getSkate() {
+        return skate;
+    }
+
+    public void setSkate(Skateboard skate) {
+        this.skate = skate;
+    }
+
     
     
     

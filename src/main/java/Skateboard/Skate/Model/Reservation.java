@@ -73,6 +73,30 @@ public class Reservation {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Skateboard getSkate() {
+        return skate;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setSkate(Skateboard skate) {
+        this.skate = skate;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
+    }
     
     
     
