@@ -3,8 +3,6 @@ package Skateboard.Skate.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +11,6 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "skate")
@@ -39,13 +36,35 @@ public class Skateboard implements Serializable{
     
     private Category category;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="skate")
+    @ManyToOne
+    @JoinColumn(name ="message")
     @JsonIgnoreProperties("skate")
-    public List<Message>messages;
+    private Message messages;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="skate")
+    @ManyToOne
+    @JoinColumn(name ="reservation")
     @JsonIgnoreProperties("skate")
-    public List<Reservation> reservations;
+    private Reservation reservations;
+
+    public void setMessages(Message messages) {
+        this.messages = messages;
+    }
+
+    public void setReservations(Reservation reservations) {
+        this.reservations = reservations;
+    }
+    
+    
+    
+
+    public Message getMessages() {
+        return messages;
+    }
+
+    public Reservation getReservations() {
+        return reservations;
+    }
+    
     
     
 
@@ -57,24 +76,8 @@ public class Skateboard implements Serializable{
         return brand;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
     public Integer getYear() {
         return year;
-    }
-
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    public void setReservations(List<Reservation> reservations) {
-        this.reservations = reservations;
     }
 
     public String getName() {
@@ -113,7 +116,7 @@ public class Skateboard implements Serializable{
         this.category = category;
     }
 
-    
+
     
             
 
