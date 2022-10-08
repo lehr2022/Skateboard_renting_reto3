@@ -3,6 +3,7 @@ package Skateboard.Skate.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,8 @@ public class Skateboard implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String brand;
-    private Integer yeard;
+    @Column(name="years")
+    private Integer year;
     private String name;
     private String description;
 
@@ -43,7 +45,7 @@ public class Skateboard implements Serializable{
     }
 
     public Integer getYear() {
-        return yeard;
+        return year;
     }
 
     public String getName() {
@@ -66,8 +68,8 @@ public class Skateboard implements Serializable{
         this.brand = brand;
     }
 
-    public void setYear(Integer yeard) {
-        this.yeard = yeard;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public void setName(String name) {
