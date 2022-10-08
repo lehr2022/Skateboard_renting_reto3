@@ -23,12 +23,15 @@ public class ClientService {
         return clientRepository.getClient(id);
     }
 
-    public Client save(Client client) {
+   
+     
+    
+     public Client save(Client client) {
         if (client.getIdClient() == null) {
             return clientRepository.save(client);
         } else {
-            Optional<Client> client1 = clientRepository.getClient(client.getIdClient());
-            if (client1.isPresent()) {
+            Optional<Client> category1 = clientRepository.getClient(client.getIdClient());
+            if (category1.isPresent()) {
                 return clientRepository.save(client);
             } else {
                 return client;

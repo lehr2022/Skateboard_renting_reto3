@@ -3,6 +3,8 @@ package Skateboard.Skate.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "skate")
@@ -33,41 +36,18 @@ public class Skateboard implements Serializable{
     @ManyToOne
     @JoinColumn(name ="category")
     @JsonIgnoreProperties("skate")
-    
     private Category category;
     
-    @ManyToOne
-    @JoinColumn(name ="message")
-    @JsonIgnoreProperties("skate")
-    private Message messages;
-    
-    @ManyToOne
-    @JoinColumn(name ="reservation")
-    @JsonIgnoreProperties("skate")
-    private Reservation reservations;
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
+    @JsonIgnoreProperties({"skate","client"})
+    private List<Message> messages;
 
-    public void setMessages(Message messages) {
-        this.messages = messages;
-    }
-
-    public void setReservations(Reservation reservations) {
-        this.reservations = reservations;
-    }
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
+    @JsonIgnoreProperties({"skate","messages"})
+    public List<Reservation> reservations;
     
     
     
-
-    public Message getMessages() {
-        return messages;
-    }
-
-    public Reservation getReservations() {
-        return reservations;
-    }
-    
-    
-    
-
     public Integer getId() {
         return id;
     }
@@ -115,11 +95,5 @@ public class Skateboard implements Serializable{
     public void setCategory(Category category) {
         this.category = category;
     }
-
-
-    
-            
-
-    
     
 }
