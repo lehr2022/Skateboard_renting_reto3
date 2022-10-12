@@ -20,24 +20,24 @@ public class Client implements Serializable{
     private Integer idClient;
     private String name;
     private String email;
-    private Integer password;
+    private String password;
     private Integer age;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    //@OneToMany(mappedBy="client")
     @JsonIgnoreProperties("client")
     public List<Message>messages;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="client")
-    //@OneToMany(mappedBy="client")
     @JsonIgnoreProperties("client")
     public List<Reservation> reservations;
+    
+    
 
     public void setIdClient(Integer idClient) {
         this.idClient = idClient;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -61,7 +61,7 @@ public class Client implements Serializable{
         return email;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 

@@ -21,14 +21,12 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name="id")
-    @JsonIgnoreProperties({"messages","reservations"}) 
-    //@JsonIgnoreProperties({"messages"})
-    public Skateboard skate;
-
+    @JsonIgnoreProperties({"messages"}) 
+    private Skateboard skate;
+    
 
     @ManyToOne
     @JoinColumn(name="idClient")
-    //@JsonIgnoreProperties({"messages"})
     @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
