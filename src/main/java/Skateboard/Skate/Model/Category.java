@@ -40,7 +40,7 @@ public class Category implements Serializable{
         return description;
     }
 
-    public List<Skateboard> getSkate() {
+    public List<Skateboard> getSkates() {
         return skates;
     }
 
@@ -56,10 +56,11 @@ public class Category implements Serializable{
         this.description = description;
     }
 
-    public void setSkate(List<Skateboard> skate) {
-        this.skates = skate;
+    public void setSkates(List<Skateboard> skates) {
+        this.skates = skates;
     }
-    
+
+      
     
     
 }

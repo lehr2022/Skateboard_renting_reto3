@@ -38,6 +38,10 @@ public class Message {
         return messageText;
     }
 
+    public Skateboard getSkate() {
+        return skate;
+    }
+
     public Client getClient() {
         return client;
     }
@@ -50,19 +54,14 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public Skateboard getSkate() {
-        return skate;
-    }
-
     public void setSkate(Skateboard skate) {
         this.skate = skate;
     }
 
-    
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     
     
 }
