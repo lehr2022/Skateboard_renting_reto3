@@ -70,14 +70,6 @@ public class Skateboard implements Serializable{
         return category;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
     public void setId(Integer id) {
         this.id = id;
     }
@@ -101,7 +93,14 @@ public class Skateboard implements Serializable{
     public void setCategory(Category category) {
         this.category = category;
     }
+    
+    public List<Message> getMessages() {
+        return messages;
+    }
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }

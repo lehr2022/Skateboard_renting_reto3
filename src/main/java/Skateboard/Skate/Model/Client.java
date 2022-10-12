@@ -51,14 +51,7 @@ public class Client implements Serializable{
         return age;
     }
 
-    public List<Message> getMessages() {
-        return messages;
-    }
-
-    public List<Reservation> getReservations() {
-        return reservations;
-    }
-
+ 
     public void setIdClient(Integer idClient) {
         this.idClient = idClient;
     }
@@ -78,7 +71,14 @@ public class Client implements Serializable{
     public void setAge(Integer age) {
         this.age = age;
     }
+    
+   public List<Message> getMessages() {
+        return messages;
+    }
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
