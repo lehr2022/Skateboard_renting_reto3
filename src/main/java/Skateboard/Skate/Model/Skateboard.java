@@ -51,6 +51,10 @@ public class Skateboard implements Serializable{
     public Integer getId() {
         return id;
     }
+    
+     public String getName() {
+        return name;
+    }
 
     public String getBrand() {
         return brand;
@@ -60,9 +64,7 @@ public class Skateboard implements Serializable{
         return year;
     }
 
-    public String getName() {
-        return name;
-    }
+   
 
     public String getDescription() {
         return description;
