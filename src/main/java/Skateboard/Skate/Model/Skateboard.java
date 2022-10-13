@@ -39,11 +39,11 @@ public class Skateboard implements Serializable{
     private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
-    @JsonIgnoreProperties({"skate","client"})
+    @JsonIgnoreProperties("client")
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
-    @JsonIgnoreProperties({"skate","messages"})
+    @JsonIgnoreProperties("messages")
     public List<Reservation> reservations;
 
     public Integer getId() {
