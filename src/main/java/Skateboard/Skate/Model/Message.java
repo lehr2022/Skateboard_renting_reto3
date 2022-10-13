@@ -27,7 +27,7 @@ public class Message {
 
     @ManyToOne
     @JoinColumn(name="idClient")
-    @JsonIgnoreProperties({"messages",})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
     public Integer getIdMessage() {
@@ -36,10 +36,6 @@ public class Message {
 
     public String getMessageText() {
         return messageText;
-    }
-
-    public Skateboard getSkate() {
-        return skate;
     }
 
     public Client getClient() {
@@ -54,12 +50,16 @@ public class Message {
         this.messageText = messageText;
     }
 
-    public void setSkate(Skateboard skate) {
-        this.skate = skate;
-    }
-
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public Skateboard getSkate() {
+        return skate;
+    }
+
+    public void setSkate(Skateboard skate) {
+        this.skate = skate;
     }
 
     

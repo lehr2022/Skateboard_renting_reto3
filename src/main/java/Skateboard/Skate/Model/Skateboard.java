@@ -39,19 +39,17 @@ public class Skateboard implements Serializable{
     private Category category;
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
-    @JsonIgnoreProperties("client")
+    @JsonIgnoreProperties({"skate","client"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "skate")
-    @JsonIgnoreProperties("messages")
+    @JsonIgnoreProperties({"skate","messages"})
     public List<Reservation> reservations;
-
+    
+    
+    
     public Integer getId() {
         return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getBrand() {
@@ -60,6 +58,10 @@ public class Skateboard implements Serializable{
 
     public Integer getYear() {
         return year;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
@@ -74,16 +76,16 @@ public class Skateboard implements Serializable{
         this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
     public void setYear(Integer year) {
         this.year = year;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setDescription(String description) {
@@ -93,7 +95,7 @@ public class Skateboard implements Serializable{
     public void setCategory(Category category) {
         this.category = category;
     }
-    
+
     public List<Message> getMessages() {
         return messages;
     }
@@ -101,6 +103,7 @@ public class Skateboard implements Serializable{
     public List<Reservation> getReservations() {
         return reservations;
     }
+
     public void setMessages(List<Message> messages) {
         this.messages = messages;
     }
@@ -108,7 +111,6 @@ public class Skateboard implements Serializable{
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
     
     
     
