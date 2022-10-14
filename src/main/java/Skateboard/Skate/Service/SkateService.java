@@ -48,11 +48,11 @@ public class SkateService {
                 if(skate.getName()!=null){
                     opt.get().setName(skate.getName());
                 }
-                if(skate.getBrand()!=null){
-                    opt.get().setBrand(skate.getBrand());
-                }
                 if(skate.getYear()!=null){
                     opt.get().setYear(skate.getYear());
+                }
+                if(skate.getBrand()!=null){
+                    opt.get().setBrand(skate.getBrand());
                 }
                 if(skate.getDescription()!=null){                    
                     opt.get().setDescription(skate.getDescription());
