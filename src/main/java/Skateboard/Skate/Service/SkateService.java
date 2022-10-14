@@ -1,4 +1,3 @@
-
 package Skateboard.Skate.Service;
 
 import Skateboard.Skate.Model.Skateboard;
@@ -12,71 +11,64 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SkateService {
-    
+
     @Autowired
-     private SkateRepository skateRepository;
-    
-    public List<Skateboard> getAll(){
+    private SkateRepository skateRepository;
+
+    public List<Skateboard> getAll() {
         return skateRepository.getAll();
     }
-    
-    
-      public Optional<Skateboard> getSkateboard(int id) {
+
+    public Optional<Skateboard> getSkateboard(int id) {
         return skateRepository.getSkateboard(id);
     }
 
-    
-  
-    
-    public Skateboard save(Skateboard skate){
-        if(skate.getId()==null){
-           return skateRepository.save(skate); 
-        }else{
+    public Skateboard save(Skateboard skate) {
+        if (skate.getId() == null) {
+            return skateRepository.save(skate);
+        } else {
             Optional<Skateboard> opt = skateRepository.getSkateboard(skate.getId());
-            if(opt.isPresent()){
+            if (opt.isPresent()) {
                 return skateRepository.save(skate);
-            }else{
+            } else {
                 return skate;
             }
-        }    
+        }
     }
-    
-     public Skateboard update(Skateboard skate){
-        if(skate.getId()!=null){
+
+    public Skateboard update(Skateboard skate) {
+        if (skate.getId() != null) {
             Optional<Skateboard> opt = skateRepository.getSkateboard(skate.getId());
-            if(!opt.isPresent()){
-                if(skate.getName()!=null){
+            if (!opt.isPresent()) {
+                if (skate.getName() != null) {
                     opt.get().setName(skate.getName());
                 }
-                if(skate.getYear()!=null){
+                if (skate.getYear() != null) {
                     opt.get().setYear(skate.getYear());
                 }
-                if(skate.getBrand()!=null){
+                if (skate.getBrand() != null) {
                     opt.get().setBrand(skate.getBrand());
                 }
-                if(skate.getDescription()!=null){                    
+                if (skate.getDescription() != null) {
                     opt.get().setDescription(skate.getDescription());
                 }
-                if(skate.getCategory()!=null){                    
-                   opt.get().setCategory(skate.getCategory());
+                if (skate.getCategory() != null) {
+                    opt.get().setCategory(skate.getCategory());
                 }
                 skateRepository.save(opt.get());
-                return opt.get();
-            }else{
+                return skateRepository.save(opt.get());
+            } else {
                 return skate;
             }
-        }else{
-           return skate;
-     }
- }
-        
-    
-    
-    
+        } else {
+            return skate;
+        }
+    }
+
     public boolean deleteSkateboard(int id) {
-       
-        Optional<Skateboard> c= skateRepository.getSkateboard(id);
-        if(c.isPresent()){
+
+        Optional<Skateboard> c = skateRepository.getSkateboard(id);
+        if (c.isPresent()) {
             skateRepository.delete(c.get());
             return true;
         }
@@ -84,4 +76,3 @@ public class SkateService {
     }
 
 }
-
