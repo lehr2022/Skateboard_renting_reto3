@@ -38,7 +38,7 @@ public class ScoreService {
      public Score update(Score score){
         if(score.getIdScore()!=null){
             Optional<Score>g= scoreRepository.getScore(score.getIdScore());
-            if(!g.isPresent()){
+            if(g.isPresent()){
                 if(score.getMessageText()!=null){
                     g.get().setMessageText(score.getMessageText());
                 }

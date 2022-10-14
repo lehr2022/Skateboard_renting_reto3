@@ -39,7 +39,7 @@ public class AdminService {
     public Admin update(Admin admin){
         if(admin.getIdAdmin()!=null){
             Optional<Admin>g= adminRepository.getAdmin(admin.getIdAdmin());
-            if(!g.isPresent()){
+            if(g.isPresent()){
                 if(admin.getEmail()!=null){                    
                     g.get().setEmail(admin.getEmail());
                 }

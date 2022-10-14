@@ -18,7 +18,7 @@ public class SkateRepository {
         return(List<Skateboard>) skateCrudRepository.findAll();
     }
     
-      public Optional<Skateboard> getSkateboard(int id){
+    public Optional<Skateboard> getSkateboard(int id){
         return skateCrudRepository.findById(id);
     }
     
