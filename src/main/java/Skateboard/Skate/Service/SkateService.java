@@ -39,7 +39,7 @@ public class SkateService {
     public Skateboard update(Skateboard skate) {
         if (skate.getId() != null) {
             Optional<Skateboard> opt = skateRepository.getSkateboard(skate.getId());
-            if (!opt.isPresent()) {
+            if (opt.isPresent()) {
                 if (skate.getName() != null) {
                     opt.get().setName(skate.getName());
                 }
