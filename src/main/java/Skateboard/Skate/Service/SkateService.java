@@ -40,5 +40,39 @@ public class SkateService {
             }
         }    
     }
+    
+     public Skateboard update(Skateboard skate){
+        if(skate.getId()!=null){
+            Optional<Skateboard>g= skateRepository.getSkateboard(skate.getId());
+            if(!g.isPresent()){
+                if(skate.getName()!=null){
+                    g.get().setName(skate.getName());
+                }
+                if(skate.getBrand()!=null){
+                    g.get().setBrand(skate.getBrand());
+                }
+                if(skate.getYear()!=null){
+                    g.get().setYear(skate.getYear());
+                }
+                if(skate.getDescription()!=null){                    
+                    g.get().setDescription(skate.getDescription());
+                }
+                return skateRepository.save(g.get());
+            }
+        }
+        return skate;
+    }
+    
+    
+    public boolean deleteSkateboard(int id) {
+       
+        Optional<Skateboard> c= skateRepository.getSkateboard(id);
+        if(c.isPresent()){
+            skateRepository.delete(c.get());
+            return true;
+        }
+        return false;
+    }
+
 }
 
