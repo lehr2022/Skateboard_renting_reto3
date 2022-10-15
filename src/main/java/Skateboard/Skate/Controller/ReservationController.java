@@ -2,6 +2,8 @@
 package Skateboard.Skate.Controller;
 
 import Skateboard.Skate.Model.Reservation;
+import Skateboard.Skate.Reportes.ContadorClientes;
+import Skateboard.Skate.Reportes.StatusReservas;
 import Skateboard.Skate.Service.ReservationService;
 import java.util.List;
 import java.util.Optional;
@@ -54,6 +56,21 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int IdReservation) {
         return reservationService.deleteReservation(IdReservation);
+    }
+    
+    @GetMapping("/report-status")
+    public StatusReservas getStatusReservas() {
+        return reservationService.ReservacionStatus();
+    }
+
+    @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+    public List<Reservation> getReservasTiempo(@PathVariable("dateOne") String fechaInicial,@PathVariable("dateTwo") String fechaFinal) {
+        return reservationService.ReservacionTiempo(fechaInicial, fechaFinal);
+    }
+
+    @GetMapping("/report-clients")
+    public List<ContadorClientes> getClientes() {
+        return reservationService.reporteClientes();
     }
 
     
