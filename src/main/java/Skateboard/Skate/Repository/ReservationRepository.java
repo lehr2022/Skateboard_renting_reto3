@@ -2,6 +2,7 @@
 package Skateboard.Skate.Repository;
 
 import Skateboard.Skate.Model.Reservation;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,20 @@ public class ReservationRepository {
     
     public void delete(Reservation reservation){
         reservationCrudRepository.delete(reservation);
+    }
+    
+    public List<Reservation> ReservacionStatus(String status){
+        return reservationCrudRepository.findAllByStatus(status);
+    }
+
+    public List<Reservation> ReservacionTiempo(Date fechaInicial, Date fechaFinal){
+        return reservationCrudRepository.findAllByStartDateAfterAndStartDateBefore(fechaInicial, fechaFinal);
+    }
+
+       
+    public   List<Object[]> reporteClientes() {
+        return reservationCrudRepository.reporteClientes();
+
     }
     
     
