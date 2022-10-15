@@ -292,9 +292,9 @@ function eliminarInformacionmessage(){
 //// BOTONES SKATE ////
 
 
-/*function traerInformacionskate1(){
+function traerInformacionskate(){
     $.ajax({
-        url: "https://g3f2ee52b080f71-skate.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/skate/skate",
+        url: "/api/Skate/all",
         type: "GET",
         dataType: "JSON",
         crossDomain: true,
@@ -303,7 +303,7 @@ function eliminarInformacionmessage(){
             if(respuesta.status == 200){
                 console.log(respuesta.responseJSON.items);
                 alert("Se han consultado las patinetas correctamente");
-                pintarRespuestaskate(respuesta.responseJSON.items);
+                //pintarRespuestaskate(respuesta.responseJSON.items);
             }else{
                 alert("No se ha podido consultar las patinetas");
             }
@@ -334,21 +334,21 @@ function eliminarInformacionmessage(){
 }*/
 
 
-function guardarInformacionskate1(){
+function guardarInformacionskate(){
     
     let myDataskate = {
-        id: $("#idskate1").val(),
+        
         brand: $("#brandskate1").val(),
-        model: $("#modelskate1").val(),
-        category_id: $("#categoryskate1").val(),
+        year: $("#yearskate1").val(),
         name: $("#nameskate1").val(),
+        description: $("#descriptionskate1").val(),
     };
 
     let dataToSend = JSON.stringify(myDataskate);
 
 
     $.ajax({
-        url: "https://g3f2ee52b080f71-skate.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/skate/skate",
+        url: "/api/Skate/save",
         type: "POST",
         dataType: "JSON",
         crossDomain: true,
@@ -357,7 +357,7 @@ function guardarInformacionskate1(){
         complete:function(respuesta){
             if(respuesta.status == 201){
                 alert("Se ha registrado patineta con exito");
-                traerInformacionskate();
+                //traerInformacionskate();
             }else{
                 alert("Registro patineta existente o faltan campos");
             }
