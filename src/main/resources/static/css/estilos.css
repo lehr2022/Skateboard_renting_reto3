@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,600;0,800;1,400&display=swap');
+
+:root{
+    --padding-container: 100px 0;
+    --color-title:#001A49;
+}
+
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin:0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+
+}
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    color: aliceblue;
+
+}
+
+.hero::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:linear-gradient(180deg, #0000006c 0%, #00000096 25%), url('../images/Skate.jpg');
+    background-size: cover;
+    clip-path: polygon(50% 0%, 100% 0, 100% 85%, 75% 100%, 25% 85%, 0 100%, 0 0);
+    z-index: -1;
+}
+
+
+.nav{
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav_tittle{
+    font-weight: 900;
+}
+
+.nav__link{
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+
+
+}
+
+.nav__items{
+    list-style: none;
+}
+
+.nav__link{
+    color: aliceblue;
+    text-decoration: 0;
+
+}
+
+.nav__menu{
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img{
+    display: block;
+    width: 30px;
+}
+
+.nav__close{
+    display: var(--show, none);
+}
+
+.hero__container{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.hero__title{
+    font-size: 3rem;
+}
+
+            
+.hero___paragraph{
+    margin-bottom: 20px;
+}
+
+.cta{
+    display: inline-block;
+    background-color: #2091f9;
+    justify-self: center;
+    color: antiquewhite;
+    text-decoration: none;
+    padding: 13px 33px;
+    border-radius: 32px;
+    font-weight: 600;
+}
+
+
+
+.client{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.message{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.skate{
+    max-width: 800px;
+    display: grid;
+    --padding-container:0;
+    grid-auto-rows:max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+
+}
+
+*{
+    box-sizing: border-box;
+  }
+  section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+  }
+  section h2{
+    width: 100%;
+    color: #999;
+    font-family: monospace;
+  }
+  .card{
+    width: 33.333333%;
+  }
+
+  /* Estilo B */
+  .estilo-b{
+    font-family: sans-serif;
+    text-align: center;
+  }
+  .estilo-b .img-container{
+    overflow: hidden;
+    position: relative;
+  }
+  .estilo-b .img-container img{
+    width: 100%;
+  }
+  .estilo-b .img-container .price{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 20px;
+    background: rgb(255, 255, 255);
+    padding: 15px;
+  }
+  .estilo-b .img-container .favorite{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+  }
+  .estilo-b .img-container .favorite svg{
+    transform: translatey(14px);
+  }
+  .estilo-b .img-container .favorite:hover{
+    background: red;
+  }
+  .estilo-b .img-container .favorite:hover svg{
+    fill: white;
+  }
+  .estilo-b a{
+    display: inline-block;
+    margin-top: 2px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .estilo-b a:hover{
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+  }
+  

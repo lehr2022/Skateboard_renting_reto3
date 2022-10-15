@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type ="text/javascript" src="./js/funciones.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Skate renting</title>
+</head>
+
+<body>
+
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav__log">
+                <h2 class="nav_tittle">Skateboard Renting Colombia</h2>
+            </div>
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="" class="nav__link">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__link">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__link">Contacto</a>
+                </li>
+                <li class="nav__items">
+                    <a href="" class="nav__link">Catalogo</a>
+                </li>
+
+                <img src="./images/close.svg" alt="" class="nav__close">
+            </ul>
+
+            <div class="nav__menu">
+                <img src="./images/menu.svg" alt="" class="nav__img">
+            </div>
+        
+        </nav>
+
+        <section class="hero__container container">
+            <h1 class="hero__title">¡¡Es el momento de rentar una patineta!!</h1>
+            <p class="hero___paragraph">Atrevete a probar y disfruta de una experiencia increible, recorriendo la ciudad en patineta</p>    
+              
+        </section>
+
+        
+
+    </header>
+
+
+    <main>
+
+        <section class="imagenes_skate">
+           
+            <div class="card estilo-b">
+                <div class="img-container">
+                  <img src="./images/sk1.jpg" alt="producto 1">
+                  <span class="price">$8700/hora</span>
+                  <span class="favorite">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                  </span>
+                </div>
+                <p>Patineta Puente</p>
+                <button onclick="guardarInformacionskate1()">Agregar patineta</button>
+            </div>
+            <div class="card estilo-b">
+                <div class="img-container">
+                  <img src="./images/sk2.jpg" alt="producto 1">
+                  <span class="price">$10000/hora</span>
+                  <span class="favorite">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                  </span>
+                </div>
+                <p>Patineta SK8</p>
+                <button onclick="guardarInformacionskate2()">Agregar patineta</button>
+            </div>
+
+          </section>
+
+
+    </main>
+
+
+    <section>
+        <form action="">
+             
+                
+
+            <label for="nombre">
+                <span>¿Cual es tu nombre?</span>
+                <input 
+                type ="text" 
+                name="nombre"
+                id ="namecliente" 
+                placeholder="Tu nombre  "
+                autocomplete="name"
+                required
+                />
+            </label>
+
+            <label for="correo">
+                <span>¿Cual es tu email?</span>
+                <input 
+                type ="email" 
+                name="correo"
+                id ="emailcliente" 
+                placeholder="Correo  "
+                autocomplete="email"
+                required
+                />
+            </label> <br><br><br>
+
+            <label for="idcliente">
+                <span>Danos tu documento</span>
+                <input 
+                type="number"
+                id="idcliente" 
+                placeholder="Documento"
+                autocomplete="number"
+                required
+                />
+
+                </label>
+
+            <label for="password">
+                <span> Ahora ingresa una contraseña</span>
+                <input 
+                type ="text" 
+                name="password"
+                id ="password" 
+                placeholder="Contraseña  "
+                autocomplete="new-password"
+                required
+                />
+            </label> 
+            
+            <label for="edad">
+                <span>¿Cual es tu edad?</span>
+                <input 
+                type ="number" 
+                name="edad"
+                id ="agecliente" 
+                placeholder="edad  "
+                autocomplete="email"
+                required
+                />
+            </label> 
+           
+
+            <label for="fecha start">
+                <span>Fecha a rentar</span>
+                <input type ="date" id ="fecha-star" />
+            </label>
+            <label for="horario">
+                <span>Hora a rentar</span>
+                <input type ="time" id ="horario" />
+            </label> <br>
+        
+
+
+           </form>
+
+    </section>
+
+              
+
+
+            <main>
+                <section class="client">
+
+                    <h1>Información de Clientes<h1>
+                        <div>
+                            <input type="number" id="" placeholder="codigo ID cliente">
+                            <input type="text" id="" placeholder="nombre cliente">
+                            <input type="text" id="" placeholder="correo cliente">
+                            <input type="number" id="" placeholder="edad cliente">
+                        </div>
+    
+                        <div>
+    
+                            <button onclick="traerInformacion()">Consultar Clientes</button>
+                            <button onclick="guardarInformacion()">Agregar Cliente</button>
+                            <button onclick="editarInformacion()">Actualizar Cliente</button>
+                            <button onclick="eliminarInformacion()">Eliminar Cliente por ID</button>
+                            
+                            </div>
+                    
+                            <div id="resultado">
+                            
+                            </div>
+                   
+                </section>
+                
+                <section class="message">
+
+                    <h1>Información de Mensajes<h1>
+                        <div>
+                            
+                            <input type="number" id="idmessage" placeholder="codigo ID mensaje">
+                            <input type="text" id="namemessage" placeholder="mensaje texto">
+                                
+                        </div>
+                
+                        <div>
+                
+                        <button onclick="traerInformacionmessage()">Consultar Mensajes</button>
+                        <button onclick="guardarInformacionmessage()">Agregar Mensaje</button>
+                        <button onclick="editarInformacionmessage()">Actualizar Mensaje</button>
+                        <button onclick="eliminarInformacionmessage()">Eliminar Mensaje por ID</button>
+                        
+                        </div>
+                
+                        <div id="resultadoM">
+                        
+                        </div>
+                   
+                </section>
+                
+                 
+                <section class="skate">
+
+                    <h1>Información de Patinetas<h1>
+                        <div>
+                            
+                            <input type="number" id="idskate1"  value="John" style="visibility:hidden">
+                            <input type="text" id="brandskate1"  value="John" style="visibility:hidden">
+                            <input type="number" id="modelskate1"  value="John" style="visibility:hidden">
+                            <input type="number" id="categoryskate1" value="John" style="visibility:hidden">
+                            <input type="text" id="nameskate1" value="John" style="visibility:hidden">
+                
+                        </div>
+                
+                        <div>
+                
+                        <button onclick="traerInformacionskate()">Consultar patinetas</button>
+                        <button onclick="guardarInformacionskate()">Agregar patineta</button>
+                        <button onclick="editarInformacionskate()">Actualizar patineta</button>
+                        <button onclick="eliminarInformacionskate()">Eliminar patineta por ID</button>
+                        
+                        </div>
+                
+                        <div id="resultadoP">
+                        
+                        </div>
+                   
+                </section>
+        
+                
+            </main>
+        
+
+      
+    
+</body>
+
+</html>
