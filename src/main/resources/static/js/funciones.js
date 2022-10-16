@@ -4,7 +4,7 @@
 
 function traerInformacion(){
     $.ajax({
-        url: "http://localhost:80/api/Client/all",
+        url: "http://150.136.169.217:80/api/Client/all",
         type: "GET",
         dataType: "JSON",
         crossDomain: true,
@@ -58,7 +58,7 @@ function guardarInformacion(){
 
 
     $.ajax({
-        url: "http://localhost:80/api/Client/save",
+        url: "http://150.136.169.217:80/api/Client/save",
         type: "POST",
         dataType: "JSON",
         crossDomain: true,
@@ -298,7 +298,7 @@ function eliminarInformacionmessage(){
 
 function traerInformacionskate(){
     $.ajax({
-        url: "http://localhost:80/api/Skate/all",
+        url: "http://150.136.169.217:80/api/Skate/all",
         type: "GET",
         dataType: "JSON",
         crossDomain: true,
@@ -315,7 +315,7 @@ function traerInformacionskate(){
             }
 
     })
-}*/
+}
     
 /*function pintarRespuestaskate(items) {
     $("#resultadoP").empty();
@@ -352,7 +352,7 @@ function guardarInformacionskate(){
 
 
     $.ajax({
-        url: "http://localhost:80/api/Skate/save",
+        url: "http://150.136.169.217:80/api/Skate/save",
         type: "POST",
         dataType: "JSON",
         crossDomain: true,
