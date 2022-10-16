@@ -1,9 +1,10 @@
 
 //// TODOS LOS BOTONES DE CLIENTE  ////
 
+
 function traerInformacion(){
     $.ajax({
-        url: "https://g3f2ee52b080f71-skate.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "http://localhost:80/api/Client/all",
         type: "GET",
         dataType: "JSON",
         crossDomain: true,
@@ -11,6 +12,7 @@ function traerInformacion(){
         complete:function(respuesta){
             if(respuesta.status == 200){
                 alert("Se ha consultado la base de clientes correctamente");
+                console.log(respuesta.responseJSON.items);
                 pintarRespuesta(respuesta.responseJSON.items);
             }else{
                 alert("No se ha podido consultar la base de datos");
@@ -24,7 +26,7 @@ function traerInformacion(){
 function pintarRespuesta(items) {
     $("#resultado").empty();
     let myTable = "<table>";
-    myTable += "<tr><th>Codigo</th><th>Nombre</th><th>Correo</th><th>Edad</th></tr>";
+    myTable += "<tr><th>Codigo</th><th>Nombre</th><th>Correo</th><th>Password</th><th>Edad</th></tr>";
    
     for (i = 0; i < items.length; i++){
         
@@ -32,6 +34,7 @@ function pintarRespuesta(items) {
         myTable+="<td>"+items[i].id+"</td>";
         myTable+="<td>"+items[i].name+"</td>";
         myTable+="<td>"+items[i].email+"</td>";
+        myTable+="<td>"+items[i].password+"</td>";
         myTable+="<td>"+items[i].age+"</td>";
         myTable+="</tr>";
     }
@@ -47,6 +50,7 @@ function guardarInformacion(){
         id: $("#idcliente").val(),
         name: $("#namecliente").val(),
         email: $("#emailcliente").val(),
+        password: $("#passwordcliente").val(),
         age: $("#agecliente").val(),
     };
 
@@ -54,7 +58,7 @@ function guardarInformacion(){
 
 
     $.ajax({
-        url: "https://g3f2ee52b080f71-skate.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "http://localhost:80/api/Client/save",
         type: "POST",
         dataType: "JSON",
         crossDomain: true,
@@ -294,7 +298,7 @@ function eliminarInformacionmessage(){
 
 function traerInformacionskate(){
     $.ajax({
-        url: "/api/Skate/all",
+        url: "http://localhost:80/api/Skate/all",
         type: "GET",
         dataType: "JSON",
         crossDomain: true,
@@ -348,7 +352,7 @@ function guardarInformacionskate(){
 
 
     $.ajax({
-        url: "/api/Skate/save",
+        url: "http://localhost:80/api/Skate/save",
         type: "POST",
         dataType: "JSON",
         crossDomain: true,
@@ -356,10 +360,10 @@ function guardarInformacionskate(){
         contentType: "application/json",
         complete:function(respuesta){
             if(respuesta.status == 201){
-                alert("Se ha registrado patineta con exito");
+                alert("Se ha seleccionado patineta con exito, diligencia tu información personal");
                 //traerInformacionskate();
             }else{
-                alert("Registro patineta existente o faltan campos");
+                alert("No se ha seleccionado correctamente una patineta");
             }
            
             }
